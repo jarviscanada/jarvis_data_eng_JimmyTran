@@ -14,7 +14,7 @@
   "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_JimmyTran",
   "highlighted_projects": [
     {
-      "description": "Developed a web app for restaurants to help manage reservations with a visual representation of table availability. Users are able to colour-code each reservation to indicate if patrons have Utilizing HTML, CSS, Javascript, React.js, Express.js, Node.js, and MongoDB, users are able to create reservations and view all reservations via a timetable.",
+      "description": "Developed a web app for restaurants to help manage reservations with a visual representation of table availability. Users are able to colour-code each reservation to indicate if patrons have arrived or cancelled. Utilizing HTML, CSS, Javascript, React.js, Express.js, Node.js, and MongoDB, users are able to create reservations and view all reservations via a timetable.",
       "git_url": "https://github.com/JaayTran/ReservationApp",
       "name": "Reservation Management Web App"
     },
