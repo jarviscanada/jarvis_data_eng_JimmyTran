@@ -83,7 +83,7 @@ highlighted_projects:
     #URL is optional
     git_url: "https://github.com/JaayTran/ReservationApp"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: "Developed a web app for restaurants to help manage reservations with a visual representation of table availability. Users are able to colour-code each reservation to indicate if patrons have Utilizing HTML, CSS, Javascript, React.js, Express.js, Node.js, and MongoDB, users are able to create reservations and view all reservations via a timetable."
+    description: "Developed a web app for restaurants to help manage reservations with a visual representation of table availability. Users are able to colour-code each reservation to indicate if patrons have arrived or cancelled. Utilizing HTML, CSS, Javascript, React.js, Express.js, Node.js, and MongoDB, users are able to create reservations and view all reservations via a timetable."
   - name: "Point of Sales System"
     git_url: "https://github.com/JaayTran/pos"
     description: "Implemented a Point of Sales system web app to allow vendors to have a cloud-based POS system to keep track of table orders. Server users are able to take table orders and print receipts while Administrator users are also able to perform CRUD operations on user accounts, menu items, and tables. HTML, CSS, Javascript, React.js, Express.js, Node.js, and MongoDB were used to create the web app."
