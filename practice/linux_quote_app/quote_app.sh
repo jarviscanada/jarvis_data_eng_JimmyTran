@@ -16,6 +16,7 @@ if [ "$#" -ne 7 ]; then
     exit 1
 fi
 
+
 # Retrieve quote info from API and parse json with jq
 # API returns Global Quote "object" with information needed inside, jq formats it so we only have contents.
 quote_info=$(curl --request GET \
