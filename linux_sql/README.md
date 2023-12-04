@@ -51,7 +51,7 @@ In detail:
 -Using SQL users can manually view the contents of the table.
 
 ## Architecture
-[CLUSTER DIAGRAM]
+![Alt Text](./assets/LCA_Cluster_Diagram_Jimmy.png)
 
 ## Scripts
 Shell script description and usage
