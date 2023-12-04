@@ -1,0 +1,85 @@
+{
+  "education": [
+    {
+      "awards_achievements": [
+        "Software Engineering Concentration",
+        "Minor in Economics"
+      ],
+      "degree": "Honours Bachelor of Science",
+      "department": "Computer Science",
+      "duration": "2016-2021",
+      "school_name": "Toronto Metropolitan University"
+    }
+  ],
+  "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_JimmyTran",
+  "highlighted_projects": [
+    {
+      "description": "Developed a web app for restaurants to help manage reservations with a visual representation of table availability. Users are able to colour-code each reservation to indicate if patrons have arrived or cancelled. Utilizing HTML, CSS, Javascript, React.js, Express.js, Node.js, and MongoDB, users are able to create reservations and view all reservations via a timetable.",
+      "git_url": "https://github.com/JaayTran/ReservationApp",
+      "name": "Reservation Management Web App"
+    },
+    {
+      "description": "Implemented a Point of Sales system web app to allow vendors to have a cloud-based POS system to keep track of table orders. Server users are able to take table orders and print receipts while Administrator users are also able to perform CRUD operations on user accounts, menu items, and tables. HTML, CSS, Javascript, React.js, Express.js, Node.js, and MongoDB were used to create the web app.",
+      "git_url": "https://github.com/JaayTran/pos",
+      "name": "Point of Sales System"
+    }
+  ],
+  "jarvis_projects": [
+    {
+      "description": "Developed an automated monitoring agent to document hardware specifications as well as resource usage of Linux nodes for data analytics. The nodes specifically ran on CentOS 7 and used Bash/Shell scripts to obtain hardware info and resource usage. The information was stored in an RDBMS via a Docker and PostgreSQL instance. Crontab was used to automate the data collection and insertion into the SQL tables.",
+      "git_url": "/linux_sql",
+      "name": "Linux Cluster Resource Monitoring App"
+    }
+  ],
+  "name": "Jimmy Tran",
+  "others": [
+    {
+      "bullets": [
+        "Activities: Tennis, Badminton, Rock Climbing",
+        "Hobbies: Board Games, Video Games, Escape Rooms",
+        "Relaxation: Cook, Watch Horror Movies"
+      ],
+      "title": "Activities/Hobbies"
+    }
+  ],
+  "professional_experience": [
+    {
+      "company": "Jarvis",
+      "description": "Collaborated with a team of developers to create various projects utilizing Agile philosophy to develop a diverse set of projects, learning valuable skills such as Docker, Linux/Bash, PostgreSQL, and Git.",
+      "duration": "2023-present",
+      "title": "Software Developer"
+    },
+    {
+      "company": "Robot Boil House",
+      "description": "Designed and developed multiple contract-based projects for a client, spanning reservation management, point-of-sale system, and website development using technologies such as React.js, Express.js, Node.js, MongoDB, HTML, and CSS. ",
+      "duration": "June 2021 - Sept 2023",
+      "title": "Software Engineer"
+    }
+  ],
+  "skills": {
+    "competent": [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "Python",
+      "MongoDB"
+    ],
+    "familiar": [
+      "Postman",
+      "Docker",
+      "SQL",
+      "GraphQL",
+      "PostgresQL"
+    ],
+    "proficient": [
+      "Java",
+      "Linux/Bash",
+      "RDBMS/SQL",
+      "Agile/Scrum",
+      "Git",
+      "JavaScript",
+      "HTML/CSS"
+    ]
+  },
+  "summary": "I hold an Honours Bachelor of Science in Computer Science from Toronto Metropolitan University, complemented by a minor in economics and a software engineering concentration. Currently, I am a Software Developer at Jarvis Consulting, collaborating on diverse projects. In a previous role as a Software Engineer for a restaurant, I crafted impactful solutions like their website, Point of Sales system, and a Reservation Management web app. My passion lies in creating software that enhances everyday experiences, motivating my pursuit of a developer role. At Jarvis, I was able to gain experience with technologies like Linux/Bash, SQL, and Docker, complementing my expertise in JavaScript, HTML/CSS, React.js, Node.js, Express.js, and MongoDB. Keen on continuous learning, I stay up to date with evolving tech trends. Outside work, I prioritize my well-being through exercise and enjoy board games or video games with friends."
+}

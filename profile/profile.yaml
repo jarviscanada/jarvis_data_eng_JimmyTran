@@ -1,0 +1,130 @@
+# Preferred name (Characters only)
+name: "Jimmy Tran"
+# Your GitHub repo root URL
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_JimmyTran
+
+# Introduce yourself (80-120 words)
+# Suggestions: you should
+# 1) describe your academic and work experience (please focus on transferable/job related tech and soft skills only)
+# 2) explain your passion for the role you are looking for (e.g. developer, BSA, QA, tech support, etc.)
+# 3) mention what kind of role you are looking for
+# 4) briefly talk about your qualifications (soft and tech) to justify why the hiring manager should hire your
+summary: "I hold an Honours Bachelor of Science in Computer Science from Toronto Metropolitan University, complemented by a minor in economics and a software engineering concentration. Currently, I am a Software Developer at Jarvis Consulting, collaborating on diverse projects. In a previous role as a Software Engineer for a restaurant, I crafted impactful solutions like their website, Point of Sales system, and a Reservation Management web app. My passion lies in creating software that enhances everyday experiences, motivating my pursuit of a developer role. At Jarvis, I was able to gain experience with technologies like Linux/Bash, SQL, and Docker, complementing my expertise in JavaScript, HTML/CSS, React.js, Node.js, Express.js, and MongoDB. Keen on continuous learning, I stay up to date with evolving tech trends. Outside work, I prioritize my well-being through exercise and enjoy board games or video games with friends."
+
+# Group your skills by level.
+# Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
+# DO NOT mention skills that you don't want to work on in the future (e.g. MS office)
+skills:
+  # At least 5 skills
+  proficient:
+    - Java
+    - Linux/Bash
+    - RDBMS/SQL
+    - Agile/Scrum
+    - Git
+    - JavaScript
+    - HTML/CSS
+  # At least 5 skills
+  competent:
+    - React.js
+    - Node.js
+    - Express.js
+    - Python
+    - MongoDB
+  # At least 5 skills
+  familiar:
+    - Postman
+    - Docker
+    - SQL
+    - GraphQL
+    - PostgresQL
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Linux Cluster Resource Monitoring App"
+    git_url: "/linux_sql"
+    # Please read the project description guideline carefully. Make sure you follow the simplified SDLC pattern. (t.ly/NlXQ)
+    # Please include the following keywords: CentOS, Bash/Shell, docker, RDBMS/SQL/Postgresql, crontab, data analytics
+    description: "Developed an automated monitoring agent to document hardware specifications as well as resource usage of Linux nodes for data analytics. The nodes specifically ran on CentOS 7 and used Bash/Shell scripts to obtain hardware info and resource usage. The information was stored in an RDBMS via a Docker and PostgreSQL instance. Crontab was used to automate the data collection and insertion into the SQL tables."
+  # - name: "Core Java Apps"
+  #   git_url: "/core_java"
+  #   description:
+  #     #Keywords: Java 8, REST API, OAuth, Design patterns (e.g. DAO, MVC), JUnit, Mockito, Docker
+  #     - "Twitter CRUD App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+  #     # Keywords: Java 8, JDBC, RDBMS, SQL, CRUD,DAO
+  #     - "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+  #     # Keywords: Java 8, Lambda, Stream API, IntelliJ
+  #     - "Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+  # # Please remove not started projects below so that they don't show up in your profile for now.
+  # # You will need to add a project back to your profile upon completion
+  # - name: "Spring RESTful Microservices App"
+  #   git_url: "/springboot"
+  #   #Keywords: Java8, Spring Boot, REST API, Swagger, Postman, Microservice, Docker, JDBC/JDBCTemplate/DataSource, RDBMS/SQL, Junit, Mockito, etc.
+  #   description: ""
+  # - name: "Python Data Analytics"
+  #   git_url: "/python_data_anlytics"
+  #   description: ""
+  # - name: "Hadoop"
+  #   git_url: "/hadoop"
+  #   description: ""
+  # - name: "Spark"
+  #   git_url: "/spark"
+  #   description: ""
+  # - name: "Cloud/DevOps"
+  #   git_url: "/cloud_devops"
+  #   description: ""
+
+# List of personal or academic projects
+# Feel free to add more projects
+# Please read the project description guideline carefully. Make sure you follow the simplified SDLC pattern. (t.ly/NlXQ)
+highlighted_projects:
+  #project name
+  - name: "Reservation Management Web App"
+    #URL is optional
+    git_url: "https://github.com/JaayTran/ReservationApp"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Developed a web app for restaurants to help manage reservations with a visual representation of table availability. Users are able to colour-code each reservation to indicate if patrons have arrived or cancelled. Utilizing HTML, CSS, Javascript, React.js, Express.js, Node.js, and MongoDB, users are able to create reservations and view all reservations via a timetable."
+  - name: "Point of Sales System"
+    git_url: "https://github.com/JaayTran/pos"
+    description: "Implemented a Point of Sales system web app to allow vendors to have a cloud-based POS system to keep track of table orders. Server users are able to take table orders and print receipts while Administrator users are also able to perform CRUD operations on user accounts, menu items, and tables. HTML, CSS, Javascript, React.js, Express.js, Node.js, and MongoDB were used to create the web app."
+
+#List of professional experience
+# Please read the project description guideline carefully. Make sure you follow the simplified SDLC pattern. (t.ly/NlXQ)
+#The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
+professional_experience:
+  #Write your Jarvis role as a professional experience rather than training.
+  - title: "Software Developer"
+    company: "Jarvis"
+    duration: "2023-present"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Collaborated with a team of developers to create various projects utilizing Agile philosophy to develop a diverse set of projects, learning valuable skills such as Docker, Linux/Bash, PostgreSQL, and Git."
+  - title: "Software Engineer"
+    company: "Robot Boil House"
+    duration: "June 2021 - Sept 2023"
+    description: "Designed and developed multiple contract-based projects for a client, spanning reservation management, point-of-sale system, and website development using technologies such as React.js, Express.js, Node.js, MongoDB, HTML, and CSS. "
+
+#List of edcuation
+education:
+  - school_name: "Toronto Metropolitan University"
+    duration: "2016-2021"
+    degree: "Honours Bachelor of Science"
+    department: "Computer Science"
+    # optional
+    awards_achievements:
+      - "Software Engineering Concentration"
+      - "Minor in Economics"
+  # #Optional section
+others:
+  #     #category
+  #   - title: "Certificates"
+  #     #list of items
+  #     bullets:
+  #       - "Udacity Machine Learning (2019)"
+  #   - title: "Awards"
+  #     bullets:
+  #       - "Winner"
+  - title: "Activities/Hobbies"
+    bullets:
+      - "Activities: Tennis, Badminton, Rock Climbing"
+      - "Hobbies: Board Games, Video Games, Escape Rooms"
+      - "Relaxation: Cook, Watch Horror Movies"
