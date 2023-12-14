@@ -2,7 +2,6 @@
   "education": [
     {
       "awards_achievements": [
-        "Software Engineering Concentration",
         "Minor in Economics"
       ],
       "degree": "Honours Bachelor of Science",
@@ -35,9 +34,9 @@
   "others": [
     {
       "bullets": [
-        "Activities: Tennis, Badminton, Rock Climbing",
+        "Activities: Tennis, Badminton, Ping Pong, Rock Climbing",
         "Hobbies: Board Games, Video Games, Escape Rooms",
-        "Relaxation: Cook, Watch Horror Movies"
+        "Relaxation: Cooking, Watching Horror Movies"
       ],
       "title": "Activities/Hobbies"
     }
@@ -46,40 +45,39 @@
     {
       "company": "Jarvis",
       "description": "Collaborated with a team of developers to create various projects utilizing Agile philosophy to develop a diverse set of projects, learning valuable skills such as Docker, Linux/Bash, PostgreSQL, and Git.",
-      "duration": "2023-present",
+      "duration": "Nov 2023 - Present",
       "title": "Software Developer"
     },
     {
       "company": "Robot Boil House",
-      "description": "Designed and developed multiple contract-based projects for a client, spanning reservation management, point-of-sale system, and website development using technologies such as React.js, Express.js, Node.js, MongoDB, HTML, and CSS. ",
+      "description": "Designed and developed multiple contract-based projects for a client, spanning reservation management, point-of-sale system, and website development using technologies such as React.js, Express.js, Node.js, MongoDB, HTML, and CSS. Achieved cost savings of $1000 annually for the client's POS system and significantly enhanced worker efficiency by reducing operation times from minutes to seconds during reservation management. The website, attracting an average of 7500 monthly visitors, successfully recaptured 10%-30% of revenue from UberEats' pick-up and delivery services.",
       "duration": "June 2021 - Sept 2023",
       "title": "Software Engineer"
     }
   ],
   "skills": {
     "competent": [
+      "Python",
       "React.js",
       "Node.js",
       "Express.js",
-      "Python",
-      "MongoDB"
+      "Agile/Scrum"
     ],
     "familiar": [
       "Postman",
       "Docker",
-      "SQL",
-      "GraphQL",
-      "PostgresQL"
+      "MongoDB",
+      "PostgresQL",
+      "GraphQL"
     ],
     "proficient": [
-      "Java",
-      "Linux/Bash",
-      "RDBMS/SQL",
-      "Agile/Scrum",
-      "Git",
       "JavaScript",
-      "HTML/CSS"
+      "HTML/CSS",
+      "Java",
+      "RDBMS/SQL",
+      "Linux/Bash",
+      "Git"
     ]
   },
-  "summary": "I hold an Honours Bachelor of Science in Computer Science from Toronto Metropolitan University, complemented by a minor in economics and a software engineering concentration. Currently, I am a Software Developer at Jarvis Consulting, collaborating on diverse projects. In a previous role as a Software Engineer for a restaurant, I crafted impactful solutions like their website, Point of Sales system, and a Reservation Management web app. My passion lies in creating software that enhances everyday experiences, motivating my pursuit of a developer role. At Jarvis, I was able to gain experience with technologies like Linux/Bash, SQL, and Docker, complementing my expertise in JavaScript, HTML/CSS, React.js, Node.js, Express.js, and MongoDB. Keen on continuous learning, I stay up to date with evolving tech trends. Outside work, I prioritize my well-being through exercise and enjoy board games or video games with friends."
+  "summary": "As a Computer Science graduate from Toronto Metropolitan University, I hold a minor in economics and specialize in software engineering. As a Software Developer at Jarvis Consulting, I actively cultivate my skills by tackling diverse and challenging projects. In a previous role, I developed impactful solutions to a restaurant's website, POS system, and Reservation Management app. My passion for problem-solving and commitment to continuous learning drive my pursuit of a developer role. At Jarvis, I've gained proficiency in technologies such as Linux/Bash, SQL, and Docker to complement my knowledge in JavaScript, HTML/CSS, React.js, Node.js, Express.js, and MongoDB. Beyond work, I prioritize well-being through exercise and enjoy board and video games with friends."
 }
