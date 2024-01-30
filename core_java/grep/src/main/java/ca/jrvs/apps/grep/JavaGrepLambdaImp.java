@@ -10,10 +10,27 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class JavaGrepImpLambda extends JavaGrepImp {
+public class JavaGrepLambdaImp extends JavaGrepImp {
 
     public static void main(String[] args) {
+        if (args.length != 3) {
+            throw new IllegalArgumentException("USAGE: JavaGrep regex rootPath outFile");
+        }
 
+        // creating JavaGrepLambdaImp instead of JavaGrepImp
+        // JavaGrepLambdaImp inherits all methods except two override methods
+        JavaGrepLambdaImp javaGrepLambdaImp = new JavaGrepLambdaImp();
+        javaGrepLambdaImp.setRegex(args[0]);
+        javaGrepLambdaImp.setRootPath(args[1]);
+        javaGrepLambdaImp.setOutFile(args[2]);
+
+        try {
+            // try calling parent method,
+            // but it will call override method (in this class)
+            javaGrepLambdaImp.process();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     @Override
