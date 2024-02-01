@@ -28,6 +28,11 @@
       "description": "Developed an automated monitoring agent to document hardware specifications as well as resource usage of Linux nodes for data analytics. The nodes specifically ran on CentOS 7 and used Bash/Shell scripts to obtain hardware info and resource usage. The information was stored in an RDBMS via a Docker and PostgreSQL instance. Crontab was used to automate the data collection and insertion into the SQL tables.",
       "git_url": "/linux_sql",
       "name": "Linux Cluster Resource Monitoring App"
+    },
+    {
+      "description": "Grep App: Developed a Java 8 application using Lambda expressions and the Stream API that emulates the functionality of the Linux Grep tool. This tool efficiently searches for a specified pattern within files and outputs lines containing that pattern. The implementation harnesses the power of Java 8 features, including Lambdas and the Stream API, making it a versatile and platform-independent solution for performing grep-like operations.",
+      "git_url": "/core_java",
+      "name": "Core Java Apps"
     }
   ],
   "name": "Jimmy Tran",
