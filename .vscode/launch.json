@@ -19,7 +19,19 @@
             "args": [
                 ".*Romeo.*Juliet.*",    
                 "./core_java/grep/data",
-                "./core_java/grep/out/test.txt"
+                "./core_java/grep/out/Test.txt"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "JavaGrepLambdaImp",
+            "request": "launch",
+            "mainClass": "ca.jrvs.apps.grep.JavaGrepLambdaImp",
+            "projectName": "grep",
+            "args": [
+                ".*Romeo.*Juliet.*",    
+                "./core_java/grep/data",
+                "./core_java/grep/out/lambdaTest.txt"
             ]
         },
         {

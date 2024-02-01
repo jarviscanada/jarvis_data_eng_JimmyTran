@@ -48,15 +48,15 @@ jarvis_projects:
     # Please read the project description guideline carefully. Make sure you follow the simplified SDLC pattern. (t.ly/NlXQ)
     # Please include the following keywords: CentOS, Bash/Shell, docker, RDBMS/SQL/Postgresql, crontab, data analytics
     description: "Developed an automated monitoring agent to document hardware specifications as well as resource usage of Linux nodes for data analytics. The nodes specifically ran on CentOS 7 and used Bash/Shell scripts to obtain hardware info and resource usage. The information was stored in an RDBMS via a Docker and PostgreSQL instance. Crontab was used to automate the data collection and insertion into the SQL tables."
-  # - name: "Core Java Apps"
-  #   git_url: "/core_java"
-  #   description:
+   - name: "Core Java Apps"
+     git_url: "/core_java"
+     description:
+        Keywords: Java 8, Lambda, Stream API, IntelliJ
+       - "Grep App: Created a Java app that mirrors the functionality of Linux Grep tool. The tool searches for a specified pattern within files and outputs lines containing that pattern. The implementation allows the usage of grep regardless of the platform the command is being used on."
   #     #Keywords: Java 8, REST API, OAuth, Design patterns (e.g. DAO, MVC), JUnit, Mockito, Docker
   #     - "Twitter CRUD App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
   #     # Keywords: Java 8, JDBC, RDBMS, SQL, CRUD,DAO
   #     - "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
-  #     # Keywords: Java 8, Lambda, Stream API, IntelliJ
-  #     - "Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
   # # Please remove not started projects below so that they don't show up in your profile for now.
   # # You will need to add a project back to your profile upon completion
   # - name: "Spring RESTful Microservices App"

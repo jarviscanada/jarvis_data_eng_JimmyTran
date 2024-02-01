@@ -1,14 +1,17 @@
 package ca.jrvs.apps.grep;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class JavaGrepLambdaImp extends JavaGrepImp {
 
@@ -46,61 +49,71 @@ public class JavaGrepLambdaImp extends JavaGrepImp {
         writeToFile(matchedLines);
     }
 
+    // https://howtodoinjava.com/java8/java-8-list-all-files-example/
     @Override
     public List<File> listFiles(String rootDir) {
-        List<File> fileList = new ArrayList<File>();
-        File[] files = new File(rootDir).listFiles();
-        if (files == null) {
-            return null;
-        } else {
-            for (File file : files) {
-                if (file.isFile()) {
-                    fileList.add(file);
-                } else if (file.isDirectory()) {
-                    fileList.addAll(listFiles(file.getAbsolutePath()));
-                }
-            }
+        List<File> fileList = new ArrayList<>();
+
+        try (Stream<Path> stream = Files.walk(Paths.get(rootDir))) {
+            fileList = stream.map(Path::normalize)
+                    .filter(Files::isRegularFile)
+                    .map(Path::toFile)
+                    .collect(Collectors.toList());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
         return fileList;
     }
 
+    // https://mkyong.com/java8/java-8-stream-read-a-file-line-by-line/
     @Override
     public List<String> readLines(File inputFile) {
-        List<String> lines = new ArrayList<String>();
+        List<String> lines = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))) {
-
-            String line;
-
-            while ((line = reader.readLine()) != null) {
-                lines.add(line);
-            }
-            reader.close();
+            lines = reader.lines().collect(Collectors.toList());
         } catch (IOException e) {
-            logger.error("Error: File not found", e);
+            e.printStackTrace();
         }
 
         return lines;
     }
 
-    @Override
-    public boolean containsPattern(String line) {
-        return Pattern.matches(getRegex(), line);
-    }
+    // @Override
+    // public List<File> listFiles(String rootDir) {
+    // List<File> fileList = new ArrayList<File>();
+    // File[] files = new File(rootDir).listFiles();
+    // if (files == null) {
+    // return null;
+    // } else {
+    // for (File file : files) {
+    // if (file.isFile()) {
+    // fileList.add(file);
+    // } else if (file.isDirectory()) {
+    // fileList.addAll(listFiles(file.getAbsolutePath()));
+    // }
+    // }
+    // }
+    // return fileList;
+    // }
 
-    @Override
-    public void writeToFile(List<String> lines) throws IOException {
-        String filePath = getOutFile();
-        File file = new File(filePath);
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+    // @Override
+    // public List<String> readLines(File inputFile) {
+    // List<String> lines = new ArrayList<String>();
 
-            for (String line : lines) {
-                writer.write(line);
-                writer.newLine();
-            }
-            writer.close();
-        } catch (IOException e) {
-            logger.error("Error: Unable to write to file", e);
-        }
-    }
+    // try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))) {
+
+    // String line;
+
+    // while ((line = reader.readLine()) != null) {
+    // lines.add(line);
+    // }
+    // reader.close();
+    // } catch (IOException e) {
+    // logger.error("Error: File not found", e);
+    // }
+
+    // return lines;
+    // }
 }
