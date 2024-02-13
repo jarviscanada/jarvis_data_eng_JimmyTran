@@ -13,6 +13,13 @@
     },
     {
       "type": "java",
+      "name": "JsonParser",
+      "request": "launch",
+      "mainClass": "ca.jrvs.apps.jdbc.JsonParser",
+      "projectName": "jdbc"
+    },
+    {
+      "type": "java",
       "name": "Current File",
       "request": "launch",
       "mainClass": "${file}"
