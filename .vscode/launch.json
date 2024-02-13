@@ -1,45 +1,52 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "java",
-            "name": "Current File",
-            "request": "launch",
-            "mainClass": "${file}"
-        },
-        {
-            "type": "java",
-            "name": "JavaGrepImp",
-            "request": "launch",
-            "mainClass": "ca.jrvs.apps.grep.JavaGrepImp",
-            "projectName": "grep",
-            "args": [
-                ".*Romeo.*Juliet.*",    
-                "./core_java/grep/data",
-                "./core_java/grep/out/Test.txt"
-            ]
-        },
-        {
-            "type": "java",
-            "name": "JavaGrepLambdaImp",
-            "request": "launch",
-            "mainClass": "ca.jrvs.apps.grep.JavaGrepLambdaImp",
-            "projectName": "grep",
-            "args": [
-                ".*Romeo.*Juliet.*",    
-                "./core_java/grep/data",
-                "./core_java/grep/out/lambdaTest.txt"
-            ]
-        },
-        {
-            "type": "java",
-            "name": "HelloWorld",
-            "request": "launch",
-            "mainClass": "ca.jrvs.apps.practice.HelloWorld",
-            "projectName": "grep"
-        }
-    ]
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "RestApiCall",
+      "request": "launch",
+      "mainClass": "ca.jrvs.apps.jdbc.RestApiCall",
+      "projectName": "jdbc"
+    },
+    {
+      "type": "java",
+      "name": "Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "JavaGrepImp",
+      "request": "launch",
+      "mainClass": "ca.jrvs.apps.grep.JavaGrepImp",
+      "projectName": "grep",
+      "args": [
+        ".*Romeo.*Juliet.*",
+        "./core_java/grep/data",
+        "./core_java/grep/out/Test.txt"
+      ]
+    },
+    {
+      "type": "java",
+      "name": "JavaGrepLambdaImp",
+      "request": "launch",
+      "mainClass": "ca.jrvs.apps.grep.JavaGrepLambdaImp",
+      "projectName": "grep",
+      "args": [
+        ".*Romeo.*Juliet.*",
+        "./core_java/grep/data",
+        "./core_java/grep/out/lambdaTest.txt"
+      ]
+    },
+    {
+      "type": "java",
+      "name": "HelloWorld",
+      "request": "launch",
+      "mainClass": "ca.jrvs.apps.practice.HelloWorld",
+      "projectName": "grep"
+    }
+  ]
 }
