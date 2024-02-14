@@ -33,7 +33,7 @@
       "args": [
         ".*Romeo.*Juliet.*",
         "./core_java/grep/data",
-        "./core_java/grep/out/Test.txt"
+        "./core_java/grep/out/Tes2t.txt"
       ]
     },
     {
