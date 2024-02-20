@@ -1,7 +1,8 @@
-package ca.jrvs.apps.stockquote.dao;
+package ca.jrvs.apps.stockquote;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.OkHttpClient;
 
@@ -10,10 +11,11 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.sql.Timestamp;
 
 public class QuoteHttpHelper {
 
-    private String apiKey;
+    private String apiKey = "bf054731femsh35fa8d48cc951a8p11d1d6jsnb77c1a86a057";
     private OkHttpClient client;
 
     /**
@@ -37,11 +39,19 @@ public class QuoteHttpHelper {
             HttpResponse<String> response = HttpClient.newHttpClient().send(request,
                     HttpResponse.BodyHandlers.ofString());
 
-            ObjectMapper m = new ObjectMapper();
-            quote = m.readValue(response.body(), Quote.class);
+            ObjectMapper objectMapper = new ObjectMapper();
+            JsonNode jsonNode = objectMapper.readTree(response.body());
+            JsonNode globalQuoteNode = jsonNode.get("Global Quote");
 
+            if (globalQuoteNode == null || globalQuoteNode.isEmpty()) {
+                throw new IllegalArgumentException("Global Quote not found in the JSON response");
+            } else {
+                quote = objectMapper.convertValue(globalQuoteNode, Quote.class);
+                Timestamp currentTimestamp = new Timestamp(System.currentTimeMillis());
+                quote.setTimestamp(currentTimestamp);
+            }
 
-            System.out.println(response.body());
+            //  System.out.println(response.body());
 
         } catch (InterruptedException e) {
             e.printStackTrace();
