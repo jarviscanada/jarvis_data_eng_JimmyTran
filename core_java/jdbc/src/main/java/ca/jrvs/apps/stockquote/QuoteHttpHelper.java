@@ -15,8 +15,13 @@ import java.sql.Timestamp;
 
 public class QuoteHttpHelper {
 
-    private String apiKey = "bf054731femsh35fa8d48cc951a8p11d1d6jsnb77c1a86a057";
+    private String apiKey;
     private OkHttpClient client;
+
+    public QuoteHttpHelper(final String apiKey, final OkHttpClient client) {
+        this.apiKey = apiKey;
+        this.client = client;
+    }
 
     /**
      * Fetch latest quote data from Alpha Vantage endpoint
@@ -44,7 +49,7 @@ public class QuoteHttpHelper {
             JsonNode globalQuoteNode = jsonNode.get("Global Quote");
 
             if (globalQuoteNode == null || globalQuoteNode.isEmpty()) {
-                throw new IllegalArgumentException("Global Quote not found in the JSON response");
+                throw new IllegalArgumentException("Symbol does not exist.");
             } else {
                 quote = objectMapper.convertValue(globalQuoteNode, Quote.class);
                 Timestamp currentTimestamp = new Timestamp(System.currentTimeMillis());

@@ -60,4 +60,16 @@ public class PositionService {
         }
         posDao.deleteById(ticker);
     }
+
+    public Iterable<Position> viewAll() {
+        return posDao.findAll();
+    }
+
+    public Optional<Position> view(String ticker) {
+        Optional<Position> positionOptional = posDao.findById(ticker);
+        if (positionOptional.isEmpty()) {
+            throw new IllegalArgumentException("You do not own this stock");
+        }
+        return positionOptional;
+    }
 }

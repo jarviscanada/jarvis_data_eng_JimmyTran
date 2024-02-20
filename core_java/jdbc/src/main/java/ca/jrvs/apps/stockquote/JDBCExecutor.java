@@ -13,12 +13,12 @@ public class JDBCExecutor {
         try {
             Connection connection = dcm.getConnection();
             QuoteDao quoteDao = new QuoteDao(connection);
-            QuoteHttpHelper quoteHttpHelper = new QuoteHttpHelper();
-            Quote quote = quoteHttpHelper.fetchQuoteInfo("MSFT");
+            //QuoteHttpHelper quoteHttpHelper = new QuoteHttpHelper();
+            // Quote quote = quoteHttpHelper.fetchQuoteInfo("MSFT");
 
             //save new stock(CREATE UPDATE)
-            Quote stock = quoteDao.save(quote);
-            System.out.println(stock);
+            // Quote stock = quoteDao.save(quote);
+            //System.out.println(stock);
             //find single stock(READ)
             // Optional<Quote> testStock = quoteDao.findById("AAPL");
             // System.out.println(testStock);
