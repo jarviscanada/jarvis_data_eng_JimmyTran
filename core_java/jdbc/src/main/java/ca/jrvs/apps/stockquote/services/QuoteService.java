@@ -23,8 +23,14 @@ public class QuoteService {
      * @return Latest quote information or empty optional if ticker symbol not found
      */
     public Optional<Quote> fetchQuoteDataFromAPI(String ticker) {
-        Optional<Quote> quote = Optional.ofNullable(httpHelper.fetchQuoteInfo(ticker));
-        dao.save(quote.get());
-        return quote;
+        try {
+            Optional<Quote> quote = Optional.ofNullable(httpHelper.fetchQuoteInfo(ticker));
+            dao.save(quote.get());
+            return quote;
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            throw new IllegalArgumentException();
+
+        }
     }
 }

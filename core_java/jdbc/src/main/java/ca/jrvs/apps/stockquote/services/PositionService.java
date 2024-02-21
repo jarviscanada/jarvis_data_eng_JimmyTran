@@ -27,7 +27,6 @@ public class PositionService {
      */
     public Position buy(String ticker, int numberOfShares, double price) {
         Position position = new Position();
-        // Retrieve the quote information for the given ticker
         Optional<Quote> quoteOptional = quoteDao.findById(ticker);
 
         if (quoteOptional.isEmpty()) {
@@ -67,7 +66,7 @@ public class PositionService {
 
     public Optional<Position> view(String ticker) {
         Optional<Position> positionOptional = posDao.findById(ticker);
-        if (positionOptional.isEmpty()) {
+        if (positionOptional.isEmpty() || positionOptional == null) {
             throw new IllegalArgumentException("You do not own this stock");
         }
         return positionOptional;
