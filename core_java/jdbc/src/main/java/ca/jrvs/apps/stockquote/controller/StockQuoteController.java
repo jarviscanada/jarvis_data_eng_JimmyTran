@@ -33,7 +33,7 @@ public class StockQuoteController {
             displayMenu();
 
             int input = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character
+            scanner.nextLine();
 
             switch (input) {
                 case 1:
