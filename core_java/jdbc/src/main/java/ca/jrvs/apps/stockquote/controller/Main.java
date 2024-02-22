@@ -20,7 +20,7 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
         Map<String, String> properties = new HashMap<>();
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\JIMMY\\Documents\\GitHub\\Jarvis\\jarvis_data_eng_JimmyTran\\core_java\\jdbc\\src\\main\\resources\\properties.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Jimmy\\OneDrive\\Documents\\Projects\\jarvis_data_eng_JimmyTran\\core_java\\jdbc\\src\\main\\resources\\properties.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] tokens = line.split(":");

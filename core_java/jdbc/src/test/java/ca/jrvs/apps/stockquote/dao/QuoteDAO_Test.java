@@ -1,9 +1,7 @@
 package ca.jrvs.apps.stockquote.dao;
 
 import ca.jrvs.apps.stockquote.DatabaseConnectionManager;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import ca.jrvs.apps.stockquote.Quote;
 
 import java.sql.Connection;
@@ -18,54 +16,90 @@ import static org.junit.Assert.*;
 public class QuoteDAO_Test {
     private DatabaseConnectionManager dcm;
     private Connection connection;
+    private QuoteDao quoteDao;
+    private Quote originalAAPLState;
+    private Quote originalMSFTState;
+    private Quote testQuote1;
+    private Quote testQuote2;
+    private String ticker1;
+    private String ticker2;
+    private Timestamp testTimestamp;
 
     @Before
     public void setUp() throws SQLException {
         dcm = new DatabaseConnectionManager("localhost",
                 "stock_quote", "postgres", "password");
         connection = dcm.getConnection();
+        quoteDao = new QuoteDao(connection);
+
+        ticker1 = "GOOG";
+        ticker2 = "AMZN";
+        testTimestamp = new Timestamp(System.currentTimeMillis());
+
+        originalAAPLState = quoteDao.findById(ticker1).orElse(null);
+        originalMSFTState = quoteDao.findById(ticker2).orElse(null);
+
+        testQuote1 = new Quote();
+        testQuote1.setTicker(ticker1);
+        testQuote1.setOpen(181.74);
+        testQuote1.setHigh(182.43);
+        testQuote1.setLow(180.0);
+        testQuote1.setPrice(181.56);
+        testQuote1.setVolume(49402449);
+        testQuote1.setLatestTradingDay(new Date(124, 9, 10));
+        testQuote1.setPreviousClose(182.31);
+        testQuote1.setChange(-0.75);
+        testQuote1.setChangePercent("-0.4114%");
+        testQuote1.setTimestamp(testTimestamp);
+        quoteDao.save(testQuote1);
+
+        testQuote2 = new Quote();
+        testQuote2.setTicker(ticker2);
+        testQuote2.setOpen(281.74);
+        testQuote2.setHigh(282.43);
+        testQuote2.setLow(280.0);
+        testQuote2.setPrice(281.56);
+        testQuote2.setVolume(49402449);
+        testQuote2.setLatestTradingDay(new Date(124, 9, 10));
+        testQuote2.setPreviousClose(282.31);
+        testQuote2.setChange(-0.75);
+        testQuote2.setChangePercent("-0.4114%");
+        testQuote2.setTimestamp(testTimestamp);
+        quoteDao.save(testQuote2);
     }
 
     @After
     public void tearDown() throws SQLException {
-        QuoteDao quoteDao = new QuoteDao(connection);
-        quoteDao.deleteAll();
+        quoteDao.deleteById(ticker1);
+        quoteDao.deleteById(ticker2);
+        if (originalAAPLState != null) {
+            quoteDao.save(originalAAPLState);
+        }
+        if (originalMSFTState != null) {
+            quoteDao.save(originalMSFTState);
+        }
         connection.close();
     }
 
     @Test
     public void save() {
-        QuoteDao quoteDao = new QuoteDao(connection);
-        Timestamp testTimestamp = new Timestamp(System.currentTimeMillis());
         try {
-            Quote quote = new Quote();
-            quote.setTicker("AAPL");
-            quote.setOpen(181.74);
-            quote.setHigh(182.43);
-            quote.setLow(180.0);
-            quote.setPrice(181.56);
-            quote.setVolume(49402449);
-            quote.setLatestTradingDay(new Date(124, 9, 10));
-            quote.setPreviousClose(182.31);
-            quote.setChange(-0.75);
-            quote.setChangePercent("-0.4114%");
-            quote.setTimestamp(testTimestamp);
-            Quote savedQuote = quoteDao.save(quote);
+            Quote savedQuote = quoteDao.save(testQuote1);
+            assertEquals(savedQuote, testQuote1);
 
-            assertEquals(savedQuote, quote);
+            assertEquals(ticker1, testQuote1.getTicker());
+            assertEquals(181.74, testQuote1.getOpen(), 0.001);
+            assertEquals(182.43, testQuote1.getHigh(), 0.001);
+            assertEquals(180.0, testQuote1.getLow(), 0.001);
+            assertEquals(181.56, testQuote1.getPrice(), 0.001);
+            assertEquals(49402449, testQuote1.getVolume(), 0.001);
+            assertEquals(new Date(124, 9, 10), testQuote1.getLatestTradingDay());
+            assertEquals(182.31, testQuote1.getPreviousClose(), 0.001);
+            assertEquals(-0.75, testQuote1.getChange(), 0.001);
+            assertEquals("-0.4114%", testQuote1.getChangePercent());
+            assertEquals(testTimestamp, testQuote1.getTimestamp());
 
-            assertEquals("AAPL", quote.getTicker());
-            assertEquals(181.74, quote.getOpen(), 0.001);
-            assertEquals(182.43, quote.getHigh(), 0.001);
-            assertEquals(180.0, quote.getLow(), 0.001);
-            assertEquals(181.56, quote.getPrice(), 0.001);
-            assertEquals(49402449, quote.getVolume(), 0.001);
-            assertEquals(new Date(124, 9, 10), quote.getLatestTradingDay());
-            assertEquals(182.31, quote.getPreviousClose(), 0.001);
-            assertEquals(-0.75, quote.getChange(), 0.001);
-            assertEquals("-0.4114%", quote.getChangePercent());
-            assertEquals(testTimestamp, quote.getTimestamp());
-
+            quoteDao.deleteById(ticker1);
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException(e);
@@ -74,36 +108,20 @@ public class QuoteDAO_Test {
 
     @Test
     public void findByID() {
-        QuoteDao quoteDao = new QuoteDao(connection);
-        Timestamp testTimestamp = new Timestamp(System.currentTimeMillis());
         try {
-            Quote quote = new Quote();
-            quote.setTicker("AAPL");
-            quote.setOpen(181.74);
-            quote.setHigh(182.43);
-            quote.setLow(180.0);
-            quote.setPrice(181.56);
-            quote.setVolume(49402449);
-            quote.setLatestTradingDay(new Date(124, 9, 10));
-            quote.setPreviousClose(182.31);
-            quote.setChange(-0.75);
-            quote.setChangePercent("-0.4114%");
-            quote.setTimestamp(testTimestamp);
-            quoteDao.save(quote);
+            Optional<Quote> foundQuote = quoteDao.findById(ticker1);
 
-            Optional<Quote> savedQuote = quoteDao.findById("AAPL");
-
-            assertEquals("AAPL", savedQuote.get().getTicker());
-            assertEquals(181.74, savedQuote.get().getOpen(), 0.001);
-            assertEquals(182.43, savedQuote.get().getHigh(), 0.001);
-            assertEquals(180.0, savedQuote.get().getLow(), 0.001);
-            assertEquals(181.56, savedQuote.get().getPrice(), 0.001);
-            assertEquals(49402449, savedQuote.get().getVolume(), 0.001);
-            assertEquals(new Date(124, 9, 10), savedQuote.get().getLatestTradingDay());
-            assertEquals(182.31, savedQuote.get().getPreviousClose(), 0.001);
-            assertEquals(-0.75, savedQuote.get().getChange(), 0.001);
-            assertEquals("-0.4114%", savedQuote.get().getChangePercent());
-            assertEquals(testTimestamp, savedQuote.get().getTimestamp());
+            assertEquals(ticker1, foundQuote.get().getTicker());
+            assertEquals(181.74, foundQuote.get().getOpen(), 0.001);
+            assertEquals(182.43, foundQuote.get().getHigh(), 0.001);
+            assertEquals(180.0, foundQuote.get().getLow(), 0.001);
+            assertEquals(181.56, foundQuote.get().getPrice(), 0.001);
+            assertEquals(49402449, foundQuote.get().getVolume(), 0.001);
+            assertEquals(new Date(124, 9, 10), foundQuote.get().getLatestTradingDay());
+            assertEquals(182.31, foundQuote.get().getPreviousClose(), 0.001);
+            assertEquals(-0.75, foundQuote.get().getChange(), 0.001);
+            assertEquals("-0.4114%", foundQuote.get().getChangePercent());
+            assertEquals(testTimestamp, foundQuote.get().getTimestamp());
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -113,43 +131,13 @@ public class QuoteDAO_Test {
 
     @Test
     public void findAll() {
-        QuoteDao quoteDao = new QuoteDao(connection);
-        Timestamp testTimestamp = new Timestamp(System.currentTimeMillis());
         try {
-            Quote quote = new Quote();
-            quote.setTicker("AAPL");
-            quote.setOpen(181.74);
-            quote.setHigh(182.43);
-            quote.setLow(180.0);
-            quote.setPrice(181.56);
-            quote.setVolume(49402449);
-            quote.setLatestTradingDay(new Date(124, 9, 10));
-            quote.setPreviousClose(182.31);
-            quote.setChange(-0.75);
-            quote.setChangePercent("-0.4114%");
-            quote.setTimestamp(testTimestamp);
-            quoteDao.save(quote);
-
-            Quote quote2 = new Quote();
-            quote2.setTicker("MSFT");
-            quote2.setOpen(281.74);
-            quote2.setHigh(282.43);
-            quote2.setLow(280.0);
-            quote2.setPrice(281.56);
-            quote2.setVolume(49402449);
-            quote2.setLatestTradingDay(new Date(124, 9, 10));
-            quote2.setPreviousClose(282.31);
-            quote2.setChange(-0.75);
-            quote2.setChangePercent("-0.4114%");
-            quote2.setTimestamp(testTimestamp);
-            quoteDao.save(quote2);
-
             Iterable<Quote> quotes = quoteDao.findAll();
             boolean found1 = false;
             boolean found2 = false;
 
             for (Quote q : quotes) {
-                if (q.getTicker().equals("AAPL")) {
+                if (q.getTicker().equals(ticker1)) {
                     found1 = true;
                     assertEquals(181.74, q.getOpen(), 0.001);
                     assertEquals(182.43, q.getHigh(), 0.001);
@@ -161,7 +149,7 @@ public class QuoteDAO_Test {
                     assertEquals(-0.75, q.getChange(), 0.001);
                     assertEquals("-0.4114%", q.getChangePercent());
                     assertEquals(testTimestamp, q.getTimestamp());
-                } else if (q.getTicker().equals("MSFT")) {
+                } else if (q.getTicker().equals(ticker2)) {
                     found2 = true;
                     assertEquals(281.74, q.getOpen(), 0.001);
                     assertEquals(282.43, q.getHigh(), 0.001);
@@ -187,26 +175,10 @@ public class QuoteDAO_Test {
 
     @Test
     public void deleteById() {
-        Timestamp testTimestamp = new Timestamp(System.currentTimeMillis());
-        QuoteDao quoteDao = new QuoteDao(connection);
         try {
-            Quote quote = new Quote();
-            quote.setTicker("AAPL");
-            quote.setOpen(181.74);
-            quote.setHigh(182.43);
-            quote.setLow(180.0);
-            quote.setPrice(181.56);
-            quote.setVolume(49402449);
-            quote.setLatestTradingDay(new Date(124, 9, 10));
-            quote.setPreviousClose(182.31);
-            quote.setChange(-0.75);
-            quote.setChangePercent("-0.4114%");
-            quote.setTimestamp(testTimestamp);
-            quoteDao.save(quote);
+            quoteDao.deleteById(ticker1);
 
-            quoteDao.deleteById("AAPL");
-
-            Optional<Quote> deletedQuote = quoteDao.findById("AAPL");
+            Optional<Quote> deletedQuote = quoteDao.findById(ticker1);
             assertFalse(deletedQuote.isPresent());
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
@@ -217,41 +189,11 @@ public class QuoteDAO_Test {
 
     @Test
     public void deleteAll() {
-        QuoteDao quoteDao = new QuoteDao(connection);
-        Timestamp testTimestamp = new Timestamp(System.currentTimeMillis());
         try {
-            Quote quote = new Quote();
-            quote.setTicker("AAPL");
-            quote.setOpen(181.74);
-            quote.setHigh(182.43);
-            quote.setLow(180.0);
-            quote.setPrice(181.56);
-            quote.setVolume(49402449);
-            quote.setLatestTradingDay(new Date(124, 9, 10));
-            quote.setPreviousClose(182.31);
-            quote.setChange(-0.75);
-            quote.setChangePercent("-0.4114%");
-            quote.setTimestamp(testTimestamp);
-            quoteDao.save(quote);
-
-            Quote quote2 = new Quote();
-            quote2.setTicker("MSFT");
-            quote2.setOpen(281.74);
-            quote2.setHigh(282.43);
-            quote2.setLow(280.0);
-            quote2.setPrice(281.56);
-            quote2.setVolume(49402449);
-            quote2.setLatestTradingDay(new Date(124, 9, 10));
-            quote2.setPreviousClose(282.31);
-            quote2.setChange(-0.75);
-            quote2.setChangePercent("-0.4114%");
-            quote2.setTimestamp(testTimestamp);
-            quoteDao.save(quote2);
-
             quoteDao.deleteAll();
 
-            Optional<Quote> deletedQuote1 = quoteDao.findById("AAPL");
-            Optional<Quote> deletedQuote2 = quoteDao.findById("MSFT");
+            Optional<Quote> deletedQuote1 = quoteDao.findById(ticker1);
+            Optional<Quote> deletedQuote2 = quoteDao.findById(ticker2);
             assertFalse(deletedQuote1.isPresent());
             assertFalse(deletedQuote2.isPresent());
         } catch (IllegalArgumentException e) {
