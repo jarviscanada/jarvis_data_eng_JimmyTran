@@ -6,6 +6,7 @@ import ca.jrvs.apps.stockquote.services.QuoteService;
 
 import java.util.Optional;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class StockQuoteController {
 
@@ -32,27 +33,32 @@ public class StockQuoteController {
         while (true) {
             displayMenu();
 
-            int input = scanner.nextInt();
-            scanner.nextLine();
+            try {
+                int input = scanner.nextInt();
+                scanner.nextLine();
 
-            switch (input) {
-                case 1:
-                    handleBuyOption(scanner);
-                    break;
-                case 2:
-                    handleSellOption(scanner);
-                    break;
-                case 3:
-                    handleViewInfoOption(scanner);
-                    break;
-                case 4:
-                    handleViewAllOption(scanner);
-                    break;
-                case 5:
-                    System.out.println("Thank you, Have a great day!");
-                    return;
-                default:
-                    System.out.println("Invalid command. Please enter a valid command (1-5).");
+                switch (input) {
+                    case 1:
+                        handleBuyOption(scanner);
+                        break;
+                    case 2:
+                        handleSellOption(scanner);
+                        break;
+                    case 3:
+                        handleViewInfoOption(scanner);
+                        break;
+                    case 4:
+                        handleViewAllOption(scanner);
+                        break;
+                    case 5:
+                        System.out.println("Thank you, Have a great day!");
+                        return;
+                    default:
+                        System.out.println("Invalid command. Please enter a valid command (1-5).");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid integer.");
+                waitForEnterKey(scanner);
             }
         }
     }

@@ -17,8 +17,7 @@ public class QuoteDAO_Test {
     private DatabaseConnectionManager dcm;
     private Connection connection;
     private QuoteDao quoteDao;
-    private Quote originalAAPLState;
-    private Quote originalMSFTState;
+    private PositionDao positionDao;
     private Quote testQuote1;
     private Quote testQuote2;
     private String ticker1;
@@ -31,14 +30,17 @@ public class QuoteDAO_Test {
                 "stock_quote", "postgres", "password");
         connection = dcm.getConnection();
         quoteDao = new QuoteDao(connection);
-
-        ticker1 = "GOOG";
-        ticker2 = "AMZN";
+        positionDao = new PositionDao(connection);
+        
+        ticker1 = "TESTSTOCK1";
+        ticker2 = "TESTSTOCK2";
         testTimestamp = new Timestamp(System.currentTimeMillis());
 
-        originalAAPLState = quoteDao.findById(ticker1).orElse(null);
-        originalMSFTState = quoteDao.findById(ticker2).orElse(null);
+        //delete the positions in the positions table while the QuoteDao tests are run
+        positionDao.deleteById(ticker1);
+        positionDao.deleteById(ticker2);
 
+        //populate quote table with dummy data
         testQuote1 = new Quote();
         testQuote1.setTicker(ticker1);
         testQuote1.setOpen(181.74);
@@ -70,14 +72,9 @@ public class QuoteDAO_Test {
 
     @After
     public void tearDown() throws SQLException {
+        //after tests, wipe the dummy data
         quoteDao.deleteById(ticker1);
         quoteDao.deleteById(ticker2);
-        if (originalAAPLState != null) {
-            quoteDao.save(originalAAPLState);
-        }
-        if (originalMSFTState != null) {
-            quoteDao.save(originalMSFTState);
-        }
         connection.close();
     }
 

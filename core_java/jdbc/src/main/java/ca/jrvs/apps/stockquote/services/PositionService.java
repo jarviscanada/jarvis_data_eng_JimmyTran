@@ -10,11 +10,11 @@ import java.util.Optional;
 public class PositionService {
 
     private PositionDao posDao;
-    private QuoteDao quoteDao;
+    private QuoteService quoteService;
 
-    public PositionService(final PositionDao posDao, final QuoteDao quoteDao) {
+    public PositionService(final PositionDao posDao, final QuoteService quoteService) {
         this.posDao = posDao;
-        this.quoteDao = quoteDao;
+        this.quoteService = quoteService;
     }
 
     /**
@@ -27,7 +27,7 @@ public class PositionService {
      */
     public Position buy(String ticker, int numberOfShares, double price) {
         Position position = new Position();
-        Optional<Quote> quoteOptional = quoteDao.findById(ticker);
+        Optional<Quote> quoteOptional = quoteService.fetchQuoteDataFromAPI(ticker);
 
         if (quoteOptional.isEmpty()) {
             throw new IllegalArgumentException("Quote not found for ticker: " + ticker);

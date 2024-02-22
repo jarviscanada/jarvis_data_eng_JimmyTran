@@ -23,7 +23,7 @@ public class PositionService_UnitTest {
     @Mock
     private PositionDao mockPositionDao;
     @Mock
-    private QuoteDao mockQuoteDao;
+    private QuoteService mockQuoteService;
     @InjectMocks
     private PositionService positionService;
 
@@ -47,29 +47,29 @@ public class PositionService_UnitTest {
 
     @Test
     public void buy_Pass() {
-        when(mockQuoteDao.findById(ticker)).thenReturn(Optional.of(mockQuote));
+        when(mockQuoteService.fetchQuoteDataFromAPI(ticker)).thenReturn(Optional.of(mockQuote));
         when(mockPositionDao.save(any(Position.class))).thenReturn(mockPosition);
 
         Position result = positionService.buy(ticker, numOfShares, price);
 
-        verify(mockQuoteDao).findById(ticker);
+        verify(mockQuoteService).fetchQuoteDataFromAPI(ticker);
         verify(mockPositionDao).save(any());
         assertEquals(result, mockPosition);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void buy_Fail_TooManyShares() {
-        when(mockQuoteDao.findById(ticker)).thenReturn(Optional.of(mockQuote));
+        when(mockQuoteService.fetchQuoteDataFromAPI(ticker)).thenReturn(Optional.of(mockQuote));
 
         //You cant buy more shares than the volume has.
-        numOfShares = 15; //Shares now exceed volume
+        int numOfShares = 15; //Shares now exceed volume
 
         positionService.buy(ticker, numOfShares, price);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void buy_Fail_TickerDoesntExist() {
-        when(mockQuoteDao.findById(ticker)).thenReturn(Optional.empty());
+        when(mockQuoteService.fetchQuoteDataFromAPI(ticker)).thenReturn(Optional.empty());
 
         positionService.buy(ticker, numOfShares, price);
     }
@@ -112,7 +112,7 @@ public class PositionService_UnitTest {
     @Test
     public void testViewAll() {
         positionService.viewAll();
-        
+
         verify(mockPositionDao).findAll();
     }
 }
