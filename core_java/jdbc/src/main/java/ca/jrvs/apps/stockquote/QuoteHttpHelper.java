@@ -40,7 +40,6 @@ public class QuoteHttpHelper {
                 .method("GET", HttpRequest.BodyPublishers.noBody())
                 .build();
         try {
-
             HttpResponse<String> response = HttpClient.newHttpClient().send(request,
                     HttpResponse.BodyHandlers.ofString());
 
@@ -49,15 +48,12 @@ public class QuoteHttpHelper {
             JsonNode globalQuoteNode = jsonNode.get("Global Quote");
 
             if (globalQuoteNode == null || globalQuoteNode.isEmpty()) {
-                throw new IllegalArgumentException("Symbol does not exist.");
-            } else {
-                quote = objectMapper.convertValue(globalQuoteNode, Quote.class);
-                Timestamp currentTimestamp = new Timestamp(System.currentTimeMillis());
-                quote.setTimestamp(currentTimestamp);
+                return null;
             }
-
-            //  System.out.println(response.body());
-
+            quote = objectMapper.convertValue(globalQuoteNode, Quote.class);
+            Timestamp currentTimestamp = new Timestamp(System.currentTimeMillis());
+            quote.setTimestamp(currentTimestamp);
+            return quote;
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (JsonMappingException e) {

@@ -11,7 +11,7 @@ public class QuoteService {
     private QuoteDao dao;
     private QuoteHttpHelper httpHelper;
 
-    public QuoteService(final QuoteDao dao, final QuoteHttpHelper httpHelper) {
+    public QuoteService(QuoteDao dao, QuoteHttpHelper httpHelper) {
         this.dao = dao;
         this.httpHelper = httpHelper;
     }
@@ -25,12 +25,19 @@ public class QuoteService {
     public Optional<Quote> fetchQuoteDataFromAPI(String ticker) {
         try {
             Optional<Quote> quote = Optional.ofNullable(httpHelper.fetchQuoteInfo(ticker));
-            dao.save(quote.get());
+            if (quote.isEmpty()) {
+                throw new IllegalArgumentException("Invalid ticker please type a valid quote ticker!");
+            }
+
+            if (dao.findById(ticker).isEmpty()) {
+                dao.save(quote.get());
+                return quote;
+            }
             return quote;
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
             throw new IllegalArgumentException();
-
         }
+
     }
 }

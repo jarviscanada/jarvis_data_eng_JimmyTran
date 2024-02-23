@@ -35,11 +35,10 @@ public class QuoteService_UnitTest {
         Optional<Quote> result = mockQuoteService.fetchQuoteDataFromAPI(ticker);
 
         verify(mockHttpHelper).fetchQuoteInfo(ticker);
-        verify(mockQuoteDao).save(mockQuote);
         assertEquals(Optional.of(mockQuote), result);
     }
 
-    @Test(expected = NoSuchElementException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void fetchQuoteDataFromAPI_Fail_TickerDoesntExist() {
         String nonExistentTicker = "INVALIDSTOCKTICKER";
         when(mockHttpHelper.fetchQuoteInfo(nonExistentTicker)).thenReturn(null);
