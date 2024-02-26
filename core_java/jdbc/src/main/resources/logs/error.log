@@ -1,0 +1,6 @@
+2024-02-26 12:59:22,096 [main] ERROR [errorLogger] Position service: Says Trying to buy more shares than exists!
+2024-02-26 12:59:22,107 [main] ERROR [errorLogger] Position service: You do not own this stock
+2024-02-26 12:59:22,139 [main] ERROR [errorLogger] Position service: You do not own this stock
+2024-02-26 12:59:22,146 [main] ERROR [errorLogger] Position service: Can not find quote for ticker AAPL
+2024-02-26 12:59:22,361 [main] ERROR [errorLogger] Quote service: Invalid ticker please type a valid quote ticker!
+2024-02-26 12:59:22,661 [main] ERROR [errorLogger] Quote service: Invalid ticker please type a valid quote ticker!

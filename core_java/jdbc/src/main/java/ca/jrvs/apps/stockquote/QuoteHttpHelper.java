@@ -5,6 +5,8 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.OkHttpClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.URI;
@@ -14,6 +16,8 @@ import java.net.http.HttpResponse;
 import java.sql.Timestamp;
 
 public class QuoteHttpHelper {
+    final Logger infoLogger = LoggerFactory.getLogger("infoLogger");
+    final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 
     private String apiKey;
     private OkHttpClient client;
@@ -53,15 +57,18 @@ public class QuoteHttpHelper {
             quote = objectMapper.convertValue(globalQuoteNode, Quote.class);
             Timestamp currentTimestamp = new Timestamp(System.currentTimeMillis());
             quote.setTimestamp(currentTimestamp);
+
+            infoLogger.info("QuoteHttpHelper: Quote sucessfully retrieved from Alpha Vantage API");
             return quote;
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            errorLogger.error("QuoteHttpHelper: InterruptedException error: " + e.getMessage());
         } catch (JsonMappingException e) {
-            e.printStackTrace();
+            errorLogger.error("QuoteHttpHelper: JsonMappingException error: " + e.getMessage());
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
+            errorLogger.error("QuoteHttpHelper: JsonProcessingException error: " + e.getMessage());
         } catch (IOException e) {
-            e.printStackTrace();
+            errorLogger.error("QuoteHttpHelper: IOException error: " + e.getMessage());
+
         }
         return quote;
     }

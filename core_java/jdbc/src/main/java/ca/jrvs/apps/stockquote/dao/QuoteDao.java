@@ -10,9 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class QuoteDao implements CrudDao<Quote, String> {
 
     private Connection c;
+    final Logger infoLogger = LoggerFactory.getLogger("infoLogger");
+    final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 
     private static final String INSERT = "INSERT INTO quote (symbol, open, high, low, price, volume, latest_trading_day, previous_close, change, change_percent, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     private static final String UPDATE = "UPDATE quote SET open = ?, high = ?, low = ?, price = ?, volume = ?, latest_trading_day = ?, previous_close = ?, change = ?, change_percent = ?, timestamp = ? WHERE symbol = ?";
@@ -48,10 +53,11 @@ public class QuoteDao implements CrudDao<Quote, String> {
                 statement.setString(10, entity.getChangePercent());
                 statement.setTimestamp(11, entity.getTimestamp());
                 statement.execute();
+                infoLogger.info("QuoteDao: Quote has been saved {}", entity);
+
                 return entity;
             } catch (SQLException e) {
-                e.printStackTrace();
-                throw new RuntimeException(e);
+                errorLogger.error("QuoteDao: Failed to save quote" + e.getMessage());
             }
         } else {
             try (PreparedStatement statement = this.c.prepareStatement(UPDATE);) {
@@ -67,12 +73,13 @@ public class QuoteDao implements CrudDao<Quote, String> {
                 statement.setTimestamp(10, entity.getTimestamp());
                 statement.setString(11, entity.getTicker());
                 statement.execute();
+                infoLogger.info("QuoteDao: Quote has been uodated {}", entity);
                 return entity;
             } catch (SQLException e) {
-                e.printStackTrace();
-                throw new RuntimeException(e);
+                errorLogger.error("QuoteDao: Failed to update quote" + e.getMessage());
             }
         }
+        return entity;
     }
 
     /**
@@ -100,11 +107,11 @@ public class QuoteDao implements CrudDao<Quote, String> {
                 quote.setChange(rs.getDouble("change"));
                 quote.setChangePercent(rs.getString("change_percent"));
                 quote.setTimestamp(rs.getTimestamp("timestamp"));
+                infoLogger.info("QuoteDao: Quote has been found {}", s, quote);
                 return Optional.of(quote);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            errorLogger.error("QuoteDao: Failed to find quote" + e.getMessage());
         }
         return Optional.empty();
     }
@@ -133,10 +140,10 @@ public class QuoteDao implements CrudDao<Quote, String> {
                 quote.setChangePercent(rs.getString("change_percent"));
                 quote.setTimestamp(rs.getTimestamp("timestamp"));
                 quotes.add(quote);
+                infoLogger.info("QuoteDao: Quotes have been found {}", quotes);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            errorLogger.error("QuoteDao: Failed to find all quotes" + e.getMessage());
         }
         return quotes;
     }
@@ -152,9 +159,9 @@ public class QuoteDao implements CrudDao<Quote, String> {
         try (PreparedStatement statement = this.c.prepareStatement(DELETE_ONE)) {
             statement.setString(1, s);
             statement.execute();
+            infoLogger.info("QuoteDao: Quote has been deleted {}", s);
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            errorLogger.error("QuoteDao: Failed to delete quote" + e.getMessage());
         }
     }
 
@@ -165,9 +172,10 @@ public class QuoteDao implements CrudDao<Quote, String> {
     public void deleteAll() {
         try (PreparedStatement statement = this.c.prepareStatement(DELETE_ALL);) {
             statement.execute();
+            infoLogger.info("QuoteDao: Quotes have been deleted");
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            errorLogger.error("QuoteDao: Failed to delete all quotes" + e.getMessage());
+
         }
     }
 

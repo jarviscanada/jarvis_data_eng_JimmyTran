@@ -2,6 +2,8 @@ package ca.jrvs.apps.stockquote.dao;
 
 
 import ca.jrvs.apps.stockquote.Position;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,6 +14,8 @@ import java.util.List;
 import java.util.Optional;
 
 public class PositionDao implements CrudDao<Position, String> {
+    final Logger infoLogger = LoggerFactory.getLogger("infoLogger");
+    final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 
     private static final String INSERT = "INSERT INTO position (symbol, number_of_shares, value_paid) VALUES (?, ?, ?)";
     private static final String UPDATE = "UPDATE position SET number_of_shares = ?, value_paid = ? WHERE symbol = ?";
@@ -40,10 +44,11 @@ public class PositionDao implements CrudDao<Position, String> {
                 statement.setInt(2, entity.getNumOfShares());
                 statement.setDouble(3, entity.getValuePaid());
                 statement.execute();
+                infoLogger.info("PositionDao: Position has been saved {}", entity);
                 return entity;
             } catch (SQLException e) {
-                e.printStackTrace();
-                throw new RuntimeException(e);
+                errorLogger.error("PositionDao: Failed to save position {}" + e.getMessage());
+
             }
         } else {
             try (PreparedStatement statement = this.c.prepareStatement(UPDATE);) {
@@ -51,12 +56,14 @@ public class PositionDao implements CrudDao<Position, String> {
                 statement.setDouble(2, entity.getValuePaid());
                 statement.setString(3, entity.getTicker());
                 statement.execute();
+                infoLogger.info("PositionDao: Position has been updated {}", entity);
                 return entity;
             } catch (SQLException e) {
-                e.printStackTrace();
-                throw new RuntimeException(e);
+                errorLogger.error("PositionDao: Failed to save position {}" + e.getMessage());
+
             }
         }
+        return entity;
     }
 
     /**
@@ -76,11 +83,12 @@ public class PositionDao implements CrudDao<Position, String> {
                 position.setTicker(rs.getString("symbol"));
                 position.setNumOfShares(rs.getInt("number_of_shares"));
                 position.setValuePaid(rs.getDouble("value_paid"));
+                infoLogger.info("PositionDao: Position has been found {}", s, position);
                 return Optional.of(position);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            errorLogger.error("PositionDao: Failed to find position " + s + e.getMessage());
+
         }
         return Optional.empty();
     }
@@ -101,10 +109,12 @@ public class PositionDao implements CrudDao<Position, String> {
                 position.setNumOfShares(rs.getInt("number_of_shares"));
                 position.setValuePaid(rs.getDouble("value_paid"));
                 positions.add(position);
+                infoLogger.info("PositionDao: Positions have been found {}", positions);
+
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            errorLogger.error("PositionDao: Failed to find any positions" + e.getMessage());
+
         }
         return positions;
     }
@@ -120,9 +130,10 @@ public class PositionDao implements CrudDao<Position, String> {
         try (PreparedStatement statement = this.c.prepareStatement(DELETE_ONE)) {
             statement.setString(1, s);
             statement.execute();
+            infoLogger.info("PositionDao: Position has been deleted {}", s);
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            errorLogger.error("PositionDao: Failed to delete position " + s + e.getMessage());
+
         }
     }
 
@@ -133,9 +144,10 @@ public class PositionDao implements CrudDao<Position, String> {
     public void deleteAll() {
         try (PreparedStatement statement = this.c.prepareStatement(DELETE_ALL);) {
             statement.execute();
+            infoLogger.info("PositionDao: All positions has been deleted");
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            errorLogger.error("PositionDao: Failed to delted all positions" + e.getMessage());
+
         }
     }
 

@@ -3,12 +3,16 @@ package ca.jrvs.apps.stockquote.controller;
 import ca.jrvs.apps.stockquote.Quote;
 import ca.jrvs.apps.stockquote.services.PositionService;
 import ca.jrvs.apps.stockquote.services.QuoteService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Optional;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
 public class StockQuoteController {
+    final Logger infoLogger = LoggerFactory.getLogger("infoLogger");
+    final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 
     private QuoteService quoteService;
     private PositionService positionService;
@@ -40,23 +44,32 @@ public class StockQuoteController {
                 switch (input) {
                     case 1:
                         handleBuyOption(scanner);
+                        infoLogger.info("StockQuoteController: Buy option activated");
                         break;
                     case 2:
                         handleSellOption(scanner);
+                        infoLogger.info("StockQuoteController: Sell option activated");
+
                         break;
                     case 3:
                         handleViewInfoOption(scanner);
+                        infoLogger.info("StockQuoteController: View option activated");
+
                         break;
                     case 4:
                         handleViewAllOption(scanner);
+                        infoLogger.info("StockQuoteController: View positions option activated");
+
                         break;
                     case 5:
                         System.out.println("Thank you, Have a great day!");
+                        infoLogger.info("StockQuoteController: Application Exited");
                         return;
                     default:
                         System.out.println("Invalid command. Please enter a valid command (1-5).");
                 }
             } catch (InputMismatchException e) {
+                errorLogger.error("StockQuoteController: Invalid input" + e.getMessage());
                 System.out.println("Invalid input. Please enter a valid integer.");
                 waitForEnterKey(scanner);
             }

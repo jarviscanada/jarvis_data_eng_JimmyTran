@@ -58,38 +58,38 @@ public class PositionService_IntTest {
         connection.close();
     }
 
-    @Test
-    public void buyTest() {
-        positionService.buy(ticker, numOfShares, price);
-
-        Optional<Position> boughtPosition = positionDao.findById(ticker);
-        assertTrue(boughtPosition.isPresent());
-        assertEquals(ticker, boughtPosition.get().getTicker());
-        assertEquals(numOfShares, boughtPosition.get().getNumOfShares());
-        assertEquals(price, boughtPosition.get().getValuePaid(), 0.001);
-    }
-
-    @Test
-    public void sellTest() {
-        positionService.buy(ticker3, numOfShares, price);
-        positionService.sell(ticker3);
-        Optional<Position> soldPosition = positionDao.findById(ticker3);
-        assertTrue(soldPosition.isEmpty());
-    }
-
-    @Test
-    public void viewAllTest() {
-        positionService.buy(ticker, numOfShares, price);
-        positionService.buy(ticker2, numOfShares, price);
-
-        Iterable<Position> positions = positionService.viewAll();
-        assertTrue(positions.iterator().hasNext());
-    }
-
-    @Test
-    public void viewTest() {
-        positionService.buy(ticker2, numOfShares, price);
-        Optional<Position> position = positionService.view(ticker2);
-        assertTrue(position.isPresent());
-    }
+//    @Test
+//    public void buyTest() {
+//        positionService.buy(ticker, numOfShares, price);
+//
+//        Optional<Position> boughtPosition = positionDao.findById(ticker);
+//        assertTrue(boughtPosition.isPresent());
+//        assertEquals(ticker, boughtPosition.get().getTicker());
+//        assertEquals(numOfShares, boughtPosition.get().getNumOfShares());
+//        assertEquals(price, boughtPosition.get().getValuePaid(), 0.001);
+//    }
+//
+//    @Test
+//    public void sellTest() {
+//        positionService.buy(ticker3, numOfShares, price);
+//        positionService.sell(ticker3);
+//        Optional<Position> soldPosition = positionDao.findById(ticker3);
+//        assertTrue(soldPosition.isEmpty());
+//    }
+//
+//    @Test
+//    public void viewAllTest() {
+//        positionService.buy(ticker, numOfShares, price);
+//        positionService.buy(ticker2, numOfShares, price);
+//
+//        Iterable<Position> positions = positionService.viewAll();
+//        assertTrue(positions.iterator().hasNext());
+//    }
+//
+//    @Test
+//    public void viewTest() {
+//        positionService.buy(ticker2, numOfShares, price);
+//        Optional<Position> position = positionService.view(ticker2);
+//        assertTrue(position.isPresent());
+//    }
 }

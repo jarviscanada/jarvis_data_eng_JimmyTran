@@ -6,6 +6,8 @@ import ca.jrvs.apps.stockquote.dao.QuoteDao;
 import ca.jrvs.apps.stockquote.services.PositionService;
 import ca.jrvs.apps.stockquote.services.QuoteService;
 import okhttp3.OkHttpClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -18,7 +20,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
+    static final Logger infoLogger = LoggerFactory.getLogger("infoLogger");
+    static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
+
     public static void main(String[] args) {
+        infoLogger.info("Main: Application Started");
         Map<String, String> properties = new HashMap<>();
         try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\JIMMY\\Documents\\GitHub\\Jarvis\\jarvis_data_eng_JimmyTran\\core_java\\jdbc\\src\\main\\resources\\properties.txt"))) {
             String line;
@@ -27,15 +33,17 @@ public class Main {
                 properties.put(tokens[0], tokens[1]);
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            errorLogger.error("Main: File not found!" + e.getMessage());
         } catch (IOException e) {
-            e.printStackTrace();
+            errorLogger.error("Main: IO Exception" + e.getMessage());
+
         }
 
         try {
             Class.forName(properties.get("db-class"));
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            errorLogger.error("Main: Class path not found!" + e.getMessage());
+
         }
         OkHttpClient client = new OkHttpClient();
         String url = "jdbc:postgresql://" + properties.get("server") + ":" + properties.get("port") + "/" + properties.get("database");
@@ -48,7 +56,7 @@ public class Main {
             StockQuoteController con = new StockQuoteController(sQuote, sPos);
             con.initClient();
         } catch (SQLException e) {
-            e.printStackTrace();
+            errorLogger.error("Main: SQL Exception!" + e.getMessage());
         }
     }
 
