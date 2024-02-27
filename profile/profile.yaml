@@ -53,7 +53,7 @@ jarvis_projects:
     description: "Grep App: Developed a Java 8 application using Lambda expressions and the Stream API that emulates the functionality of the Linux Grep tool. This tool efficiently searches for a specified pattern within files and outputs lines containing that pattern. The implementation harnesses the power of Java 8 features, including Lambdas and the Stream API, making it a versatile and platform-independent solution for performing grep-like operations."
   - name: "Core Java Stock Quote"
     git_url: "/core_java"
-    "description": "Stock Quote App: A command-line application designed to simulate a stock wallet, enabling users to perform various operations on their virtual stock portfolio. The app leverages the Alpha Vantage REST API to fetch real-time stock data and stores it in a local PostgreSQL database using JDBC. Additionally, Maven is employed for managing dependencies, and the application is Dockerized for easy distribution",
+    "description": "Stock Quote App: A command-line application designed to simulate a stock wallet, enabling users to perform various operations on their virtual stock portfolio. The app leverages the Alpha Vantage REST API to fetch real-time stock data and stores it in a local PostgreSQL database using JDBC. Additionally, Maven is employed for managing dependencies, and the application is Dockerized for easy distribution"
   #     #Keywords: Java 8, Lambda, Stream API, IntelliJ
   #     #Keywords: Java 8, REST API, OAuth, Design patterns (e.g. DAO, MVC), JUnit, Mockito, Docker
   #     - "Twitter CRUD App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
