@@ -1,0 +1,206 @@
+2024-02-26 12:59:20,474 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.437}
+2024-02-26 12:59:20,481 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.437}
+2024-02-26 12:59:20,493 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK1', numOfShares=10, valuePaid=20.5}
+2024-02-26 12:59:20,496 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK2', numOfShares=30, valuePaid=40.5}
+2024-02-26 12:59:20,500 [main] INFO  [infoLogger] PositionDao: Positions have been found [Position{ticker='TESTSTOCK1', numOfShares=10, valuePaid=20.5}]
+2024-02-26 12:59:20,500 [main] INFO  [infoLogger] PositionDao: Positions have been found [Position{ticker='TESTSTOCK1', numOfShares=10, valuePaid=20.5}, Position{ticker='TESTSTOCK2', numOfShares=30, valuePaid=40.5}]
+2024-02-26 12:59:20,503 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 12:59:20,506 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 12:59:20,509 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 12:59:20,518 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 12:59:20,543 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.537}
+2024-02-26 12:59:20,549 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.537}
+2024-02-26 12:59:20,553 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK1', numOfShares=10, valuePaid=20.5}
+2024-02-26 12:59:20,557 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK2', numOfShares=30, valuePaid=40.5}
+2024-02-26 12:59:20,559 [main] INFO  [infoLogger] PositionDao: Position has been found TESTSTOCK1
+2024-02-26 12:59:20,562 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 12:59:20,566 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 12:59:20,568 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 12:59:20,572 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 12:59:20,610 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.604}
+2024-02-26 12:59:20,614 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.604}
+2024-02-26 12:59:20,620 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK1', numOfShares=10, valuePaid=20.5}
+2024-02-26 12:59:20,627 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK2', numOfShares=30, valuePaid=40.5}
+2024-02-26 12:59:20,631 [main] INFO  [infoLogger] PositionDao: All positions has been deleted
+2024-02-26 12:59:20,635 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 12:59:20,636 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 12:59:20,639 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 12:59:20,642 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 12:59:20,667 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.662}
+2024-02-26 12:59:20,672 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.662}
+2024-02-26 12:59:20,676 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK1', numOfShares=10, valuePaid=20.5}
+2024-02-26 12:59:20,679 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK2', numOfShares=30, valuePaid=40.5}
+2024-02-26 12:59:20,682 [main] INFO  [infoLogger] QuoteDao: Quote has been found TESTSTOCK1
+2024-02-26 12:59:20,683 [main] INFO  [infoLogger] PositionDao: Position has been found TESTSTOCK1
+2024-02-26 12:59:20,686 [main] INFO  [infoLogger] PositionDao: Position has been updated Position{ticker='TESTSTOCK1', numOfShares=10, valuePaid=20.5}
+2024-02-26 12:59:20,688 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 12:59:20,691 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 12:59:20,698 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 12:59:20,701 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 12:59:20,727 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.72}
+2024-02-26 12:59:20,731 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.72}
+2024-02-26 12:59:20,735 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK1', numOfShares=10, valuePaid=20.5}
+2024-02-26 12:59:20,739 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK2', numOfShares=30, valuePaid=40.5}
+2024-02-26 12:59:20,741 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 12:59:20,743 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 12:59:20,745 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 12:59:20,748 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 12:59:20,750 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 12:59:20,773 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 12:59:20,775 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 12:59:20,780 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.772}
+2024-02-26 12:59:20,784 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.772}
+2024-02-26 12:59:20,785 [main] INFO  [infoLogger] QuoteDao: Quotes have been found [Quote{ticker='AAPL', open=185.01, high=185.04, low=182.23, price=182.52, volume=45119677, latestTradingDay=2024-02-22, previousClose=184.37, change=-1.85, changePercent='-1.0034%', timestamp=2024-02-26 12:58:12.527}]
+2024-02-26 12:59:20,786 [main] INFO  [infoLogger] QuoteDao: Quotes have been found [Quote{ticker='AAPL', open=185.01, high=185.04, low=182.23, price=182.52, volume=45119677, latestTradingDay=2024-02-22, previousClose=184.37, change=-1.85, changePercent='-1.0034%', timestamp=2024-02-26 12:58:12.527}, Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.772}]
+2024-02-26 12:59:20,786 [main] INFO  [infoLogger] QuoteDao: Quotes have been found [Quote{ticker='AAPL', open=185.01, high=185.04, low=182.23, price=182.52, volume=45119677, latestTradingDay=2024-02-22, previousClose=184.37, change=-1.85, changePercent='-1.0034%', timestamp=2024-02-26 12:58:12.527}, Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.772}, Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.772}]
+2024-02-26 12:59:20,789 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 12:59:20,806 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 12:59:20,823 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 12:59:20,824 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 12:59:20,829 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.821}
+2024-02-26 12:59:20,832 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.821}
+2024-02-26 12:59:20,833 [main] INFO  [infoLogger] QuoteDao: Quote has been found TESTSTOCK1
+2024-02-26 12:59:20,836 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 12:59:20,838 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 12:59:20,854 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 12:59:20,855 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 12:59:20,864 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.853}
+2024-02-26 12:59:20,867 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.853}
+2024-02-26 12:59:20,871 [main] INFO  [infoLogger] QuoteDao: Quotes have been deleted
+2024-02-26 12:59:20,873 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 12:59:20,874 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 12:59:20,890 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 12:59:20,891 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 12:59:20,895 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.889}
+2024-02-26 12:59:20,899 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.889}
+2024-02-26 12:59:20,900 [main] INFO  [infoLogger] QuoteDao: Quote has been found TESTSTOCK1
+2024-02-26 12:59:20,902 [main] INFO  [infoLogger] QuoteDao: Quote has been uodated Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.889}
+2024-02-26 12:59:20,905 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 12:59:20,906 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 12:59:20,908 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 12:59:20,924 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 12:59:20,925 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 12:59:20,929 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.922}
+2024-02-26 12:59:20,932 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 12:59:20.922}
+2024-02-26 12:59:20,935 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 12:59:20,938 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 12:59:20,940 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 12:59:21,935 [main] INFO  [infoLogger] QuoteHttpHelper: Quote sucessfully retrieved from Alpha Vantage API
+2024-02-26 12:59:22,090 [main] INFO  [infoLogger] Position service: Buy Position service running
+2024-02-26 12:59:22,123 [main] INFO  [infoLogger] Position service: Stock has been deleted
+2024-02-26 12:59:22,132 [main] INFO  [infoLogger] Position service: Buy Position service running
+2024-02-26 12:59:22,132 [main] INFO  [infoLogger] Position service: Has successfully purchased stock
+2024-02-26 12:59:22,145 [main] INFO  [infoLogger] Position service: Buy Position service running
+2024-02-26 12:59:22,155 [main] INFO  [infoLogger] Position service: Returned stock to view
+2024-02-26 12:59:22,194 [main] INFO  [infoLogger] Quote service: Fetching quote from api
+2024-02-26 12:59:22,386 [main] INFO  [infoLogger] Quote service: Fetching quote from api
+2024-02-26 12:59:22,589 [main] INFO  [infoLogger] QuoteHttpHelper: Quote sucessfully retrieved from Alpha Vantage API
+2024-02-26 12:59:22,596 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='AAPL', open=185.01, high=185.04, low=182.23, price=182.52, volume=45119677, latestTradingDay=2024-02-22, previousClose=184.37, change=-1.85, changePercent='-1.0034%', timestamp=2024-02-26 12:59:22.589}
+2024-02-26 12:59:22,596 [main] INFO  [infoLogger] Quote service: Quote doesnt cuurently exist in table, saving to table.
+2024-02-26 12:59:22,655 [main] INFO  [infoLogger] Quote service: Fetching quote from api
+2024-02-26 12:59:22,657 [main] INFO  [infoLogger] Quote service: Quote doesnt cuurently exist in table, saving to table.
+2024-02-26 12:59:22,661 [main] INFO  [infoLogger] Quote service: Fetching quote from api
+2024-02-26 12:59:35,126 [main] INFO  [infoLogger] Main: Application Started
+2024-02-26 12:59:39,300 [main] INFO  [infoLogger] StockQuoteController: Application Exited
+2024-02-26 13:13:52,492 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:52.35}
+2024-02-26 13:13:52,506 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:52.35}
+2024-02-26 13:13:52,547 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK1', numOfShares=10, valuePaid=20.5}
+2024-02-26 13:13:52,561 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK2', numOfShares=30, valuePaid=40.5}
+2024-02-26 13:13:52,574 [main] INFO  [infoLogger] PositionDao: Positions have been found [Position{ticker='TESTSTOCK1', numOfShares=10, valuePaid=20.5}]
+2024-02-26 13:13:52,574 [main] INFO  [infoLogger] PositionDao: Positions have been found [Position{ticker='TESTSTOCK1', numOfShares=10, valuePaid=20.5}, Position{ticker='TESTSTOCK2', numOfShares=30, valuePaid=40.5}]
+2024-02-26 13:13:52,585 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 13:13:52,597 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 13:13:52,618 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 13:13:52,626 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 13:13:52,793 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:52.769}
+2024-02-26 13:13:52,813 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:52.769}
+2024-02-26 13:13:52,826 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK1', numOfShares=10, valuePaid=20.5}
+2024-02-26 13:13:52,916 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK2', numOfShares=30, valuePaid=40.5}
+2024-02-26 13:13:52,920 [main] INFO  [infoLogger] PositionDao: Position has been found TESTSTOCK1
+2024-02-26 13:13:52,928 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 13:13:52,937 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 13:13:52,951 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 13:13:52,961 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 13:13:53,093 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.08}
+2024-02-26 13:13:53,106 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.08}
+2024-02-26 13:13:53,117 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK1', numOfShares=10, valuePaid=20.5}
+2024-02-26 13:13:53,125 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK2', numOfShares=30, valuePaid=40.5}
+2024-02-26 13:13:53,132 [main] INFO  [infoLogger] PositionDao: All positions has been deleted
+2024-02-26 13:13:53,151 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 13:13:53,162 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 13:13:53,177 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 13:13:53,191 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 13:13:53,379 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.357}
+2024-02-26 13:13:53,388 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.357}
+2024-02-26 13:13:53,397 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK1', numOfShares=10, valuePaid=20.5}
+2024-02-26 13:13:53,406 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK2', numOfShares=30, valuePaid=40.5}
+2024-02-26 13:13:53,409 [main] INFO  [infoLogger] QuoteDao: Quote has been found TESTSTOCK1
+2024-02-26 13:13:53,411 [main] INFO  [infoLogger] PositionDao: Position has been found TESTSTOCK1
+2024-02-26 13:13:53,417 [main] INFO  [infoLogger] PositionDao: Position has been updated Position{ticker='TESTSTOCK1', numOfShares=10, valuePaid=20.5}
+2024-02-26 13:13:53,430 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 13:13:53,451 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 13:13:53,456 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 13:13:53,461 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 13:13:53,508 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.493}
+2024-02-26 13:13:53,521 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.493}
+2024-02-26 13:13:53,531 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK1', numOfShares=10, valuePaid=20.5}
+2024-02-26 13:13:53,536 [main] INFO  [infoLogger] PositionDao: Position has been saved Position{ticker='TESTSTOCK2', numOfShares=30, valuePaid=40.5}
+2024-02-26 13:13:53,541 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 13:13:53,547 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 13:13:53,555 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 13:13:53,560 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 13:13:53,563 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 13:13:53,610 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 13:13:53,611 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 13:13:53,617 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.601}
+2024-02-26 13:13:53,622 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.601}
+2024-02-26 13:13:53,625 [main] INFO  [infoLogger] QuoteDao: Quotes have been found [Quote{ticker='AAPL', open=185.01, high=185.04, low=182.23, price=182.52, volume=45119677, latestTradingDay=2024-02-22, previousClose=184.37, change=-1.85, changePercent='-1.0034%', timestamp=2024-02-26 12:59:22.589}]
+2024-02-26 13:13:53,625 [main] INFO  [infoLogger] QuoteDao: Quotes have been found [Quote{ticker='AAPL', open=185.01, high=185.04, low=182.23, price=182.52, volume=45119677, latestTradingDay=2024-02-22, previousClose=184.37, change=-1.85, changePercent='-1.0034%', timestamp=2024-02-26 12:59:22.589}, Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.601}]
+2024-02-26 13:13:53,625 [main] INFO  [infoLogger] QuoteDao: Quotes have been found [Quote{ticker='AAPL', open=185.01, high=185.04, low=182.23, price=182.52, volume=45119677, latestTradingDay=2024-02-22, previousClose=184.37, change=-1.85, changePercent='-1.0034%', timestamp=2024-02-26 12:59:22.589}, Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.601}, Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.601}]
+2024-02-26 13:13:53,632 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 13:13:53,636 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 13:13:53,671 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 13:13:53,672 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 13:13:53,680 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.666}
+2024-02-26 13:13:53,686 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.666}
+2024-02-26 13:13:53,687 [main] INFO  [infoLogger] QuoteDao: Quote has been found TESTSTOCK1
+2024-02-26 13:13:53,691 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 13:13:53,695 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 13:13:53,718 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 13:13:53,720 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 13:13:53,728 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.716}
+2024-02-26 13:13:53,739 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.716}
+2024-02-26 13:13:53,746 [main] INFO  [infoLogger] QuoteDao: Quotes have been deleted
+2024-02-26 13:13:53,751 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 13:13:53,752 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 13:13:53,774 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 13:13:53,776 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 13:13:53,781 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.771}
+2024-02-26 13:13:53,790 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.771}
+2024-02-26 13:13:53,793 [main] INFO  [infoLogger] QuoteDao: Quote has been found TESTSTOCK1
+2024-02-26 13:13:53,802 [main] INFO  [infoLogger] QuoteDao: Quote has been uodated Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.771}
+2024-02-26 13:13:53,808 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 13:13:53,810 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 13:13:53,818 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 13:13:53,918 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK1
+2024-02-26 13:13:53,922 [main] INFO  [infoLogger] PositionDao: Position has been deleted TESTSTOCK2
+2024-02-26 13:13:53,937 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK1', open=181.74, high=182.43, low=180.0, price=181.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=182.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.902}
+2024-02-26 13:13:53,945 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='TESTSTOCK2', open=281.74, high=282.43, low=280.0, price=281.56, volume=49402449, latestTradingDay=2024-10-10, previousClose=282.31, change=-0.75, changePercent='-0.4114%', timestamp=2024-02-26 13:13:53.902}
+2024-02-26 13:13:53,951 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 13:13:53,958 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK1
+2024-02-26 13:13:53,965 [main] INFO  [infoLogger] QuoteDao: Quote has been deleted TESTSTOCK2
+2024-02-26 13:13:58,073 [main] INFO  [infoLogger] QuoteHttpHelper: Quote sucessfully retrieved from Alpha Vantage API
+2024-02-26 13:13:58,827 [main] INFO  [infoLogger] Position service: Buy Position service running
+2024-02-26 13:13:59,019 [main] INFO  [infoLogger] Position service: Stock has been deleted
+2024-02-26 13:13:59,091 [main] INFO  [infoLogger] Position service: Buy Position service running
+2024-02-26 13:13:59,095 [main] INFO  [infoLogger] Position service: Has successfully purchased stock
+2024-02-26 13:13:59,117 [main] INFO  [infoLogger] Position service: Buy Position service running
+2024-02-26 13:13:59,150 [main] INFO  [infoLogger] Position service: Returned stock to view
+2024-02-26 13:13:59,758 [main] INFO  [infoLogger] Quote service: Fetching quote from api
+2024-02-26 13:14:02,451 [main] INFO  [infoLogger] Quote service: Fetching quote from api
+2024-02-26 13:14:05,007 [main] INFO  [infoLogger] QuoteHttpHelper: Quote sucessfully retrieved from Alpha Vantage API
+2024-02-26 13:14:05,527 [main] INFO  [infoLogger] QuoteDao: Quote has been saved Quote{ticker='AAPL', open=185.01, high=185.04, low=182.23, price=182.52, volume=45119677, latestTradingDay=2024-02-22, previousClose=184.37, change=-1.85, changePercent='-1.0034%', timestamp=2024-02-26 13:14:05.007}
+2024-02-26 13:14:05,528 [main] INFO  [infoLogger] Quote service: Quote doesnt cuurently exist in table, saving to table.
+2024-02-26 13:14:05,623 [main] INFO  [infoLogger] Quote service: Fetching quote from api
+2024-02-26 13:14:05,625 [main] INFO  [infoLogger] Quote service: Quote doesnt cuurently exist in table, saving to table.
+2024-02-26 13:14:05,627 [main] INFO  [infoLogger] Quote service: Fetching quote from api
